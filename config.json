@@ -1,0 +1,8 @@
+{
+	"prefix": "!",
+  "token": "token-goes-here",
+  "bot_info": {
+    "name": "DiscordJs Bot",
+    "version": 1.0
+  }
+}
