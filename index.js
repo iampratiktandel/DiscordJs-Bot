@@ -5,10 +5,6 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	console.log(prefix);
-	console.log(token);
-	console.log(bot_info.name);
-	console.log(bot_info.version);
 });
 
 client.login(token);
@@ -19,5 +15,11 @@ client.on('message', message => {
 		message.channel.send('Pong.');
 	} else if (message.content.startsWith(`${prefix}Hi`)) {
 		message.channel.send('Hello');
+	}
+
+	if (message.content === `${prefix}server`) {
+		message.channel.send(`This server's name is: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+	} else if (message.content === `${prefix}user-info`) {
+		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
 });
